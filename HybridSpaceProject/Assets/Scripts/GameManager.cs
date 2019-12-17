@@ -5,18 +5,10 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-	[SerializeField] private List<GameObject> imageObjects = new List<GameObject>();
+	[SerializeField] private Image image;
 
-	public void StartSomething(Image _image)
+	public void ChangeSprite(Sprite _UpdateSprite)
 	{
-		for (int i = 0; i < imageObjects.Count; i++)
-		{
-			imageObjects[0].SetActive(true);
-		}
-	}
-
-	public void EMOTE1(GameObject _emote1)
-	{
-
+		image.sprite = _UpdateSprite;
 	}
 }
