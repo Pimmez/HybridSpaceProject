@@ -7,10 +7,20 @@ public class GameManager : MonoBehaviour
 {
 	[SerializeField] private Image image;
 	[SerializeField] private Animator anim;
+	private bool isActive;
 
-	public void ChangeSprite(Sprite _UpdateSprite)
+	private void Update()
 	{
-		image.sprite = _UpdateSprite;
+		if(Input.GetKeyDown(KeyCode.Escape))
+		{
+			Application.Quit();
+		}
+	}
+
+	public void FasesToChange(GameObject _gameObject)
+	{
+		isActive = !isActive;
+		_gameObject.SetActive(isActive);
 	}
 
 	public void ChangeSpriteWithAnimation(string _stateName)
